@@ -26,7 +26,7 @@ jobs:
   # This job build, test, package and deploy the artefact
   maven-build:
     # The tags on the runner
-    runs-on: [self-hosted, Linux]
+    runs-on: ebpro-org
 
     steps:
       #we get the content of the repository
@@ -60,7 +60,7 @@ jobs:
 
   # This job publish the successsite for develop branch
   maven-site:
-    runs-on: [self-hosted, Linux]
+    runs-on: ebpro-org
     needs: maven-build
     # Develop branch only
     if: github.ref == 'refs/heads/develop'
